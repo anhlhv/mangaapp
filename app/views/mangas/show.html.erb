@@ -1,0 +1,61 @@
+<% provide(:title, @manga.name) %>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:110px;top:150px;">
+<a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+<a class="addthis_button_tweet" tw:count="vertical"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+<a class="addthis_counter"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-505aeceb26bbde13"></script>
+<!-- AddThis Button END -->
+  <div class="span12">
+      <div class="row-fluid">
+        <div class="span9">
+          <div class="manga-top">
+            <div class="manga-name"><%= @manga.name %></div>
+            <div class="manga-addthis">
+            </div>
+          </div>
+          <div class="chapter-items">
+            <% @chapters.each do |chapter| %>
+              <div class="chapter-item">
+                <div class="chapter-item-content">
+                  <a class="thumbnail chaper_img" href = "<%= chapter_path(chapter) %>">
+                   <img src="<%= chapter.cover_photo_url %>">
+                <div class="meta">
+                  <span class="badge badge-important"><%= chapter.index %></span>
+                </div>
+                </a>
+              </div>
+              <div class="chapter-item-admin">
+                <% if (admin_signed == true) %>
+                  <%= link_to "Edit", edit_chapter_path(chapter._id) %>
+                  <%= link_to "Delete", chapter_path(chapter._id), :method => :delete, :confirm => "Are you sure?" %>
+                <% end %>
+              </div>
+              </div> 
+            <% end %>
+            </div>
+            <div class="paginate_box">
+              <%= paginate @chapters %>
+            </div>
+        </div>
+        <div class="span3">
+          <div class="show-manga-cover">
+            <img src="<%= @manga.cover_photo_url %>" class="img-rounded img-polaroid">
+          </div>
+          <div class="show-manga-info">
+            <% if (admin_signed == true) %>
+              <%= link_to "Edit", edit_manga_path(@manga._id) %>
+              <%= link_to "Delete", manga_path(@manga._id), :method => :delete, :remote => true, :confirm => "Are you sure?" %><br>
+            <% end %>
+              <b>Name:</b> <%= @manga.name %><br>
+              <b>Type:</b> <%= @manga.type %><br>
+              <b>Author:</b> <%= @manga.author %><br>
+              <b>Created at:</b> <%= @manga.create_date.strftime("%d-%m-%Y") %><br>
+              <b>Views:</b> <%= Integer(@manga.views) %><br>
+              <b>Description:</b><br> <%= @manga.description %><br>
+          </div>
+      </div>
+  </div>
+  </div>

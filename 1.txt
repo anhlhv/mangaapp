@@ -1,0 +1,523 @@
+    1  sudo apt-get update
+    2  sudo apt-get install acpid powernowd pm-utils-powersave-policy lm-sensors fancontrol
+    3  sudo apt-get install ubuntu-restricted-extras
+    4  sudo apt-get update
+    5  sudo apt-get install git
+    6  sudo apt-get install curl
+    7  bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+    8  gedit ~/.bashrc
+    9  sudo apt-get gedit
+   10  sudo apt-get install gedit
+   11  gedit ~/.bashrc
+   12  source ~/.bashrc
+   13  type rvm | head -1
+   14  source ~/.bashrc
+   15  gedit ~/.bashrc
+   16  source ~/.bashrc
+   17  type rvm | head -1
+   18  sudo apt-get update
+   19  sudo passwd root
+   20  su
+   21  sudo apt-get install git
+   22  sudo apt-get install curl
+   23  bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+   24  gedit ~/.bashrc
+   25  source ~/.bashrc
+   26  type rvm | head -1
+   27  sudo type rvm | head -1
+   28  source ~/.bashrc
+   29  sudo type rvm | head -1
+   30  type rvm | head -1
+   31  gedit ~/.bashrc
+   32  type rvm | head -1
+   33  bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+   34  gedit ~/.bashrc
+   35  sudo apt-get update
+   36  sudo apt-get install curl
+   37  curl -L get.rvm.io | bash -s stable
+   38  source ~/.rvm/scripts/rvm
+   39  rvm requirements
+   40  rvmsudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+   41  rvm install 1.9.3
+   42  rvm use 1.9.3 --default
+   43  gem install rails
+   44  ls
+   45  mkdir rails
+   46  cd rails/
+   47  rails new app
+   48  cd app
+   49  rails s
+   50  sudo apt-get install build-essential openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+   51  rails server
+   52  ls
+   53  cd rails/
+   54  cd app
+   55  rails s
+   56  gem install rails
+   57  bundle install
+   58  rails s
+   59  cd ..
+   60  rm -rf app
+   61  ls
+   62  rails new app
+   63  sudo apt-get install python-software-properties
+   64  sudo add-apt-repository ppa:chris-lea/node.js
+   65  sudo apt-get update
+   66  sudo apt-get install nodejs npm
+   67  ls
+   68  cd app
+   69  bundle install
+   70  rails s
+   71  mongod
+   72  sudo apt-get install mongodb-server
+   73  gem install mongoid
+   74  sudo apt-get install sublime
+   75  sudo apt-get install sublime2
+   76  subl
+   77  sublime
+   78  sudo add-apt-repository ppa:webupd8team/sublime-text-2
+   79  sudo apt-get update
+   80  sudo apt-get install sublime
+   81  sudo apt-get install sublime2
+   82  sudo apt-get install sublime-2
+   83  sudo apt-get install sublime-text
+   84  cd ..
+   85  rails new test_app -O -T
+   86  cd test_app/
+   87  rails g mongoid:config
+   88  rails g model Team name:string chap:string link:array
+   89  cd ..
+   90  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+   91  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+   92  ls
+   93  rm -rf myapp/
+   94  ls
+   95  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+   96  cd myapp/
+   97  bundle install
+   98  gem list
+   99  rake db:seed
+  100  cd ..
+  101  ls
+  102  rm -rf myapp/
+  103  rm -rf rails3-mongoid-devise/
+  104  ls
+  105  sudo apt-get install mongoid-clients
+  106  sudo apt-get install mongodb-clients
+  107  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+  108  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  109  bundle install
+  110  cd myapp/
+  111  bundle install
+  112  gem list
+  113  rails s
+  114  ls
+  115  cd ..
+  116  ls
+  117  rm -rf myapp/
+  118  rm -rf rails3-mongoid-devise/
+  119  ls
+  120  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+  121  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  122  bundle install
+  123  cd myapp/
+  124  bundle install\
+  125  bundle install
+  126  geml list
+  127  gem list
+  128  rake db:seed
+  129  rails g mongoid:config
+  130  rake db:seed
+  131  rake db:test:prepare
+  132  rails s
+  133  sudo apt-get upgrades
+  134  sudo apt-get upgrade
+  135  ruby -v
+  136  rails -v
+  137  vi /etc/hosts
+  138  gksu gedit /etc/hosts
+  139  cd rails/
+  140  ls
+  141  gksu gedit /etc/hosts
+  142  cd rails/
+  143  ls
+  144  gksu gedit hosts
+  145  gksu gedit etc/hosts
+  146  gksu gedit /etc/hosts
+  147  cd rails/
+  148  ls
+  149  cd myapp/
+  150  rails s
+  151  rails g
+  152  rails g scaffold
+  153  rake db:create
+  154  rails generate scaffold User name:string age:integer
+  155  rails c
+  156  bundle
+  157  cd ..
+  158  git checkout master
+  159  ls
+  160  cd rails/
+  161  ls
+  162  cd myapp
+  163  rails s
+  164  ls
+  165  cd rails/
+  166  ls
+  167  rm -rf myapp/
+  168  rm -rf rails3-mongoid-devise/
+  169  ls
+  170  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+  171  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  172  ls
+  173  rm -rf myapp/
+  174  ls
+  175  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  176  cd app/
+  177  rails s
+  178  cd rails/
+  179  ls
+  180  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  181  ls
+  182  rm -rf myapp/
+  183  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  184  ls
+  185  rm -rf myapp/
+  186  rm -rf rails3-mongoid-devise/
+  187  ls
+  188  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+  189  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  190  ruby -v
+  191  rails -v
+  192  mongod
+  193  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  194  rm -rf myapp/
+  195  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  196  ls
+  197  rm -rf myapp/
+  198  rm -rf rails3-mongoid-devise/
+  199  git clone git://github.com/RailsApps/rails3-bootstrap-devise-cancan.git
+  200  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
+  201  ls
+  202  rails new newapp
+  203  rvm
+  204  rvm list
+  205  ls
+  206  rm -rf myapp/
+  207  l
+  208  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
+  209  ls
+  210  cd app
+  211  cd ..
+  212  git clone https://github.com/lehuyvuonganh/VIP-13-app.git
+  213  cd VIP-13-app/
+  214  gs
+  215  git status
+  216  ls -a
+  217  cd ..
+  218  rails
+  219  mongo -v
+  220  mongo
+  221  rails new comic
+  222  cd comic/
+  223  git init .
+  224  git remote add origin https://github.com/lehuyvuonganh/VIP-13-app.git
+  225  git add .
+  226  git commit -am "init"
+  227  git pull
+  228  git pull origin master
+  229  git add .
+  230  git commit -am "fix init conflicts"
+  231  git config --global user.name "Vuong Anh"
+  232  git config --global user.email mr.anh91@gmail.com
+  233  git status
+  234  git push origin master
+  235  git init
+  236  cd ..
+  237  ls
+  238  cd newapp/
+  239  git checkout master
+  240  git checkout -b modeling-users
+  241  ls
+  242  cd rails/
+  243  ls
+  244  rm -rf myapp/
+  245  rm -rf rails3-bootstrap-devise-cancan/
+  246  git clone git://github.com/RailsApps/rails3-bootstrap-devise-cancan.git
+  247  ls
+  248  cd rails/
+  249  ls
+  250  rm -rf rails3-bootstrap-devise-cancan/
+  251  ls
+  252  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+  253  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  254  rm -rf myapp/
+  255  ls
+  256  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T -O
+  257  cd comic/
+  258  git checkout
+  259  git checkout -f
+  260  git -v
+  261  git version
+  262  git config -l --global
+  263  cd ..
+  264  ls
+  265  cd newapp/
+  266  history
+  267  ls
+  268  cd ..
+  269  ls
+  270  rm -rf myapp/
+  271  rm -rf rails
+  272  rm -rf rails3-mongoid-devise/
+  273  git clone git://github.com/RailsApps/rails3-bootstrap-devise-cancan.git
+  274  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T
+  275  ls
+  276  cd myapp/
+  277  ls
+  278  bundle install
+  279  gem list
+  280  rake db:seed
+  281  rails g mongoid:config
+  282  rake db:seed
+  283  gem install aciverecord-sqlite3-adapter
+  284  rake db:seed
+  285  rake db:test:prepare
+  286  rake db:migrate
+  287  rake db:test:prepare
+  288  rails s
+  289  ls
+  290  cd rails
+  291  ls
+  292  cd myapp/
+  293  cd ..
+  294  rm -rf myapp/
+  295  rm -rf rails3-bootstrap-devise-cancan/
+  296  ls
+  297  git clone git://github.com/RailsApps/rails3-mongoid-devise.git
+  298  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+  299  ls
+  300  cd rails3-mongoid-devise/
+  301  which gem
+  302  cd ..
+  303  ruby setup.rb
+  304  gem update --system 1.8.24
+  305  subl ~/.gemrc
+  306  gem install rails
+  307  rails -v
+  308  sudo apt-get install libxslt-dev libxml2-dev libsqlite3-dev
+  309  ls
+  310  rm -rf myapp/
+  311  ls
+  312  rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+  313  ls
+  314  rails new testapp -T -O
+  315  bundle install
+  316  cd testapp/
+  317  bundle install
+  318  cd ..
+  319  cd sample_app/
+  320  rails s
+  321  bundle install
+  322  rails s
+  323  rails generate controller Users new --no-test-framework
+  324  rails s
+  325  bundle
+  326  rails g
+  327  rails g devise:install
+  328  rails g devise MODEL
+  329  rake routes
+  330  rails remove devise MODEL
+  331  git status
+  332  rm app/models/model.rb 
+  333  rm db/migrate/20120818063907_devise_create_models.rb 
+  334  rm spec/models/model_spec.rb 
+  335  rails g devise USER
+  336  rake routes
+  337  cd ..
+  338  ls
+  339  rm -rf app
+  340  rails new app -T -O
+  341  bundle install
+  342  cd app
+  343  bundle install
+  344  rails g mongoid:config
+  345  bundle
+  346  rails g
+  347  rails g devise:install
+  348  rails g devise USER
+  349  rake routes
+  350  history
+  351  rake routes
+  352  rm public/index.html 
+  353  rake routes
+  354  rails g controller page home
+  355  rake rotues
+  356  rake routes
+  357  history
+  358  history > 1.txt
+  359  cd ..
+  360  cd app
+  361  rails s
+  362  history
+  363  rails s
+  364  rails c
+  365  ls
+  366  cd rails/
+  367  ls
+  368  rails new mysample -O -T
+  369  cd mysample/
+  370  bundle
+  371  rails g mongoid:confog
+  372  rails g mongoid:config
+  373  rails g devise:install
+  374  rails g devise user
+  375  rails g
+  376  rails s
+  377  cd ..
+  378  ls
+  379  rm -rf app
+  380  rails new app
+  381  rm -rf app
+  382  ls
+  383  rails new app -T -O
+  384  bundle install
+  385  cd app
+  386  bundle install
+  387  ls
+  388  rail g mongoid:config
+  389  rails g mongoid:config
+  390  bundle
+  391  rails g devise:install
+  392  rails g devise user
+  393  rake routes
+  394  mongod
+  395  rake routes
+  396  rails c
+  397  cd ..
+  398  rm -rf app
+  399  ls
+  400  rails new app -T -O
+  401  bundle install
+  402  cd app
+  403  bundle install
+  404  rails g mongoid:config
+  405  bundle
+  406  rails g devise:install
+  407  rails g devise users
+  408  rails g devise:views
+  409  rails g controller Home index token
+  410  rails generate controller Home index token
+  411  bundle
+  412  db.users.find();
+  413  rails c
+  414  rails s
+  415  cd app
+  416  cd rails/
+  417  cd app
+  418  rails c
+  419  bundle
+  420  rails c
+  421  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :stretches => 20
+  422  rails g devise :database_authenticatable, :registerable, :confirmable, :recoverable, :stretches => 20
+  423  clear
+  424  rails g devise:views
+  425  rails g devise:views users
+  426  bundle
+  427  bundle install
+  428  git checkout -b filling-in-layout
+  429  sudo mongod
+  430  rails s
+  431  cd rails/app/
+  432  cd ..
+  433  ls
+  434  cd comic
+  435  rails s
+  436  cd ..
+  437  ls
+  438  cd ~
+  439  ls
+  440  cd /
+  441  ls
+  442  cd ~
+  443  mkdir .ssh
+  444  cd .ssh/
+  445  ssh-keygen -t rsa -C "mr.anh91@gmail.com"
+  446  ls
+  447  cat id_rsa.pub
+  448  cd ~
+  449  ls
+  450  cd rails/
+  451  git clone git@github.com:quandq54/VIP_13.git
+  452  cd VIP_13/
+  453  bundle
+  454  bundle install
+  455  bundle
+  456  rake routes
+  457  mongod
+  458  rake routes
+  459  git add .
+  460  git commit -m "init layout with boottrap"
+  461  git pull
+  462  git push
+  463  git add .
+  464  git commit -m "edit project name"
+  465  git push
+  466  rails g
+  467  git pull
+  468  git diff --color
+  469  git checkout -f
+  470  git pull
+  471  rake routes
+  472  git add .
+  473  git commit -m "edit sign up path"
+  474  git push
+  475  ifconfig
+  476  git pull
+  477  bunble
+  478  bundle
+  479  rails s
+  480  ifconfig
+  481  cd root
+  482  cd /
+  483  ls
+  484  cd sys
+  485  ls
+  486  cd ..
+  487  ls
+  488  cd opt
+  489  ls
+  490  cd cc ../run
+  491  cd..
+  492  cd ..
+  493  gedit /etc/pulse/daemon.conf
+  494  vi /etc/pulse/daemon.conf
+  495  sudo apt-get install vim
+  496  ls
+  497  cd rails/
+  498  ls
+  499  cd VIP_13
+  500  ls
+  501  git push
+  502  rails s
+  503  rails c
+  504  git pull
+  505  rake routes
+  506  mongod
+  507  s
+  508  ls
+  509  cd rails/
+  510  ls
+  511  cd VIP_13
+  512  ls
+  513  rails s
+  514  mongod
+  515  rails c
+  516  rake routes
+  517  rake db:seed
+  518  rake db:seed_data
+  519  rails c
+  520  rake routes
+  521  rake db:fix_db
+  522  rake db:fix_db --trace
+  523  history > 1.txt

@@ -1,0 +1,54 @@
+<% provide(:title, 'New chapter') %>
+<% if (admin_signed == true) %>
+<%= form_for([@manga,@manga.chapters.build]) do |chapter| %>
+    <table>
+      <tr>
+        <td>
+          <%= chapter.label :cover_photo_url %>
+        </td>
+        <td>
+          <%= chapter.text_field :cover_photo_url %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :photo_album_id %>
+        </td>
+        <td>
+          <%= chapter.text_field :photo_album_id %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :photo_album_name %>
+        </td>
+        <td>
+          <%= chapter.text_field :photo_album_name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :picasa_id %>
+        </td>
+        <td>
+          <%= chapter.text_field :picasa_id %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :index %>
+        </td>
+        <td>
+          <%= chapter.text_field :index %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.submit "Create new chapter", class: "btn btn-large btn-primary" %>
+        </td>
+      </tr>
+    </table>
+<% end %>
+<% else %>
+  <meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>

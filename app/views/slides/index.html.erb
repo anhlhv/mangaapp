@@ -1,0 +1,21 @@
+<% provide(:title, 'All slides') %>
+<%= render 'layouts/menu_panel' %>
+<% if (admin_signed == true) %>
+<div class="span9">
+<h2>All slides</h2>
+ 
+  	<table class="table table-bordered">
+  		<% @slides.each do |c| %>
+  		<tr>
+  		<td><%= c.title %></td>
+  		<td><%= c.slide_url %></td>
+  		<td><img src="<%= c.photo_url %>" width="200px" height="200px"></td>
+  		<td><%= link_to "Edit", edit_slide_path(c._id) %></td>
+  		<td><%= link_to "Delete", slide_path(c._id), :method => :delete, :remote => true, :confirm => "Are you sure?" %></td>
+  		</tr>
+      <% end %>
+  		</table>
+</div>
+<% else %>
+	<meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>

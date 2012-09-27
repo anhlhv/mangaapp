@@ -1,0 +1,13 @@
+<% provide(:title, 'All chapters') %>
+<h1>All chaps</h1>
+    <div class="row-fluid block-manga">
+<%= paginate @chapters %>
+
+<ul class="chaptesr">
+  <% @chapters.each do |c| %>
+  	<li><%= c.photo_album_id %></li>
+  <% end %>
+</ul>
+
+<%= paginate @chapters %>
+</div>

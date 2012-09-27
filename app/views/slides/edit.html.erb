@@ -1,0 +1,54 @@
+
+<% provide(:title, "Edit slide") %> 
+<%= render 'layouts/menu_panel' %>
+<% if (admin_signed == true) %>
+  <div class="span9">
+  <h2>Update your slide</h2>
+  <div class="span6">
+  <%= form_for(@slide) do |slide| %>
+    <table>
+
+      <tr>
+        <td>
+          <%= slide.label :title %>
+        </td>
+        <td>
+          <%= slide.text_field :title %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= slide.label :slide_url %>
+        </td>
+        <td>
+          <%= slide.text_field :slide_url %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= slide.label :photo_url %>
+        </td>
+        <td>
+          <%= slide.text_field :photo_url  %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= slide.label :order %>
+        </td>
+        <td>
+          <%= slide.text_field :order %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= slide.submit "Save changes", class: "btn btn-large btn-primary" %>
+        </td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+</div>
+<% else %>
+  <meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>

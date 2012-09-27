@@ -1,0 +1,50 @@
+<% provide(:title, "Edit chapter") %> 
+<%= render 'layouts/menu_panel' %>
+<% if (admin_signed == true) %>
+  <div class="span6">
+  <h1>Update your chapter</h1>
+  <%= form_for(@chapter) do |chapter| %>
+    <table>
+      <tr>
+        <td>
+          <%= chapter.label :cover_photo_url %>
+        </td>
+        <td>
+          <%= chapter.text_field :cover_photo_url %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :photo_album_id %>
+        </td>
+        <td>
+          <%= chapter.text_field :photo_album_id %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :picasa_id %>
+        </td>
+        <td>
+          <%= chapter.text_field :picasa_id %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.label :index %>
+        </td>
+        <td>
+          <%= chapter.text_field :index %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= chapter.submit "Save changes", class: "btn btn-large btn-primary" %>
+        </td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+  <% else %>
+  <meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>

@@ -1,0 +1,21 @@
+<% provide(:title, 'All comments') %>
+<%= render 'layouts/menu_panel' %>
+<% if (admin_signed == true) %>
+<div class="span9">
+<h2>All slides</h2>
+ 
+  	<table class="table table-bordered">
+  		<% @comments.each do |c| %>
+  		<tr>
+      <td><%= User.where(id:c.user_id).last.email %></td>
+  		<td><%= c.comment %></td>
+  		<td><%= c.created_at %></td>
+  		<td><%= link_to "Edit", edit_comment_path(c._id) %></td>
+  		<td><%= link_to "Delete", comment_path(c._id), :method => :delete, :remote => true, :confirm => "Are you sure?" %></td>
+  		</tr>
+      <% end %>
+  		</table>
+</div>
+<% else %>
+	<meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>

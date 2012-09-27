@@ -1,0 +1,55 @@
+<% if (admin_signed == true) %>
+<div class="span6">
+<%= form_for @manga do |manga| %>
+    <table>
+      <tr>
+        <td>
+          <%= manga.label :name %>
+        </td>
+        <td>
+          <%= manga.text_field :name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= manga.label :type %>
+        </td>
+        <td>
+          <%= manga.text_field :type %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= manga.label :description %>
+        </td>
+        <td>
+          <%= manga.text_field :description %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= manga.label :cover_photo_url %>
+        </td>
+        <td>
+          <%= manga.text_field :cover_photo_url %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= manga.label :author %>
+        </td>
+        <td>
+          <%= manga.text_field :author %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= manga.submit "Tao truyen", class: "btn btn-large btn-primary" %>
+        </td>
+      </tr>
+    </table>
+<% end %>
+</div>
+<% else %>
+  <meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>

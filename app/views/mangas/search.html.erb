@@ -1,0 +1,94 @@
+<% provide(:title, 'result') %>
+<% if (@result.size!=0) %>
+  <div class="block-manga">
+    <div class="block-manga-title"> Result </div> 
+    <div class="">
+      <table class="table table-striped table-bordered">
+          <% @i = 0 %>
+          <tr class="success">
+            <td width="5px"></td>
+            <td width="300px">Name</td>
+            <td width="5px">Author</td>
+            <td width="5px">Chapter</td>
+            <td width="30px">Update</td>
+          </tr>
+          <% @result.each do |c| %>
+          <% @i=@i+1 %>
+           <tr class="success">
+              <td>
+                <%= @i %>
+              </td>
+              <td class="col1">
+                <%= link_to c.name, manga_path(c) %>
+                <% if (admin_signed == true) %>
+                <p class="admin-action">
+                   <%= link_to "Edit", edit_manga_path(c) %>
+                   <%= link_to "Delete", manga_path(c), :method => :delete, :remote => true, :confirm => "Are you sure?" %>
+                </p>
+                <% end %>
+              </td>
+              <td>
+                   <%= c.author %>
+                </td>
+           
+              <td>
+                  <%= c.chapters.count %>
+              </td>
+              <td>
+                  <%= c.create_date %>
+              </td>
+            </tr>         
+          <% end %>
+        </table>
+      </div>
+    </div>
+<% else %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+      No result
+  </div>
+<% end %>
+    <div class="row-fluid">
+      <div class="block-manga">
+      <div class="block-manga-title"> Latest Manga Updates </div> 
+    <div class="">
+      <table class="table table-striped table-bordered">
+          <% @i = 0 %>
+          <tr class="success">
+            <td width="5px"></td>
+            <td width="300px">Name</td>
+            <td width="5px">Author</td>
+            <td width="5px">Chapter</td>
+            <td width="30px">Update</td>
+          </tr>
+          <% @lasts.each do |c| %>
+          <% @i=@i+1 %>
+           <tr class="success">
+              <td>
+                <%= @i %>
+              </td>
+              <td class="col1">
+                <%= link_to c.name, manga_path(c) %>
+                <% if (admin_signed == true) %>
+                <p class="admin-action">
+                   <%= link_to "Edit", edit_manga_path(c) %>
+                   <%= link_to "Delete", manga_path(c), :method => :delete, :remote => true, :confirm => "Are you sure?" %>
+                </p>
+                <% end %>
+              </td>
+              <td>
+                   <%= c.author %>
+                </td>
+           
+              <td>
+                  <%= c.chapters.count %>
+              </td>
+              <td>
+                  <%= c.create_date %>
+              </td>
+            </tr>         
+          <% end %>
+        </table>
+      </div>
+        </div>
+        </div>

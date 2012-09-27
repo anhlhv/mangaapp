@@ -1,0 +1,12 @@
+<% provide(:title, "Edit slide") %> 
+<%= render 'layouts/menu_panel' %>
+<% if (admin_signed == true) %>
+  <div class="span9">
+  <h2>Control panel</h2>
+  <div class="span6">
+    Welcome to control panel
+  </div>
+<% else %>
+  <meta http-equiv="Refresh" content="2; url=<%= new_admin_session_path %>">
+<% end %>
+</div>

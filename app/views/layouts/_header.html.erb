@@ -1,0 +1,75 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="head-container">
+      <div class="head-logo"><%= link_to root_path do %><img src="/assets/logo.gif"></a><% end %></div>
+      <div class="head-search">
+         <%= form_tag(search_mangas_path, :method=>'GET', :multipart => true, :class=>"navbar-search pull-left") do %>
+          <%= text_field_tag "keyword" %>
+        <% end %>
+      </div>
+      <div class="head-menu">
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to "Home",  root_path %></li>
+            <li><%= link_to "List",   list_mangas_path %></li>
+            <% if user_signed_in? %>
+            <li class="dropdown">
+              <a class="dropdown-toggle"
+                 data-toggle="dropdown" href="#">
+                  User
+                  <b class="caret"></b>
+                </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to('Profile', user_password_path) %></li>
+                <li><%= link_to('Admin', panel_mangas_path) %></li>
+                <li class="divider"></li>
+                <li><%= link_to('Logout', destroy_user_session_path, :method => 'delete') %></li>
+              </ul>
+            </li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %> </li>
+              <li><a data-toggle="modal" href="#SigninDialog">Sign in</a></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+<div class="modal hide fade" id="SigninDialog">
+  <div class="modal-header">
+    <a href="#" class="close" data-dismiss="modal">&times;</a>
+    <h3>Sign in</h3>
+  </div>
+  <div class="modal-body">
+    <div class="divDialogElements">
+        <table class="table table-striped"><%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <tr>
+          <td><%= f.label :email %></td>
+          <td><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :password %></td>
+          <td><%= f.password_field :password %></td>
+        <% if devise_mapping.rememberable? -%>
+          <tr>
+            <td>
+            </td> 
+            <td>
+              <%= f.check_box :remember_me %><%= f.label :remember_me %>
+            </td>
+        </tr>
+        </table>
+        <% end -%>
+      </div>
+    </div>
+  <div class="modal-footer">
+    <%= f.submit "Sign in" , class: "btn btn-primary"%>
+      <% end %>
+    <%= link_to "Sign up", new_user_registration_path %>
+  </div>
+</div>
+
+  

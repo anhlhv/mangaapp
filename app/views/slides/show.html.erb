@@ -1,0 +1,14 @@
+<% provide(:title, 'slide') %>
+<%= render 'layouts/menu_panel' %>
+<% if (admin_signed == true) %>
+<div class="span9">
+<h2>slide</h2>
+  	<table class="table table-bordered">
+  		<td><%= @slide.title %></td>
+  		<td><%= @slide.slide_url %></td>
+  		<td><img src="<%= @slide.photo_url %>" width="200px" height="200px"></td>
+  	</table>
+</div>
+<% else %>
+	<meta http-equiv="Refresh" content="2; url=<%= new_user_session_path %>">
+<% end %>
