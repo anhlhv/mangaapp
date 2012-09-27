@@ -5,8 +5,8 @@ namespace :db  do
   desc "Task description"
   task :seed_data => :environment do
     p 'deleting all mangas and chapters...'
-    Manga.delete_all
-    Manga.delete_all
+    # Manga.delete_all
+    # Chapter.delete_all
     file1 = File.open('db/mangas.json')
     mangas = ActiveSupport::JSON.decode(file1)
     mangas_size = mangas.count
