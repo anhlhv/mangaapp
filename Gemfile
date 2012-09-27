@@ -26,9 +26,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-group :production do
-  gem 'thin'
-end
+
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
