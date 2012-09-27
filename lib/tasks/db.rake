@@ -11,6 +11,9 @@ namespace :db  do
     mangas = ActiveSupport::JSON.decode(file1)
     mangas_size = mangas.count
     p 'importing mangas...'
+    p mangas.count
+    p mangas.first
+    p mangas.last
     mangas.each_with_index do |manga, index|
       print "#{index}\r"
       Manga.create(manga)
