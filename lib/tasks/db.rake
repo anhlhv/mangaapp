@@ -12,11 +12,10 @@ namespace :db  do
     mangas_size = mangas.count
     p 'importing mangas...'
     p mangas.count
-    p mangas.first
-    p mangas.last
     mangas.each_with_index do |manga, index|
       print "#{index}\r"
-      Manga.create(manga)
+      p manga
+      Manga.create(manga) if manga
     end
     p 'importing chapters...'
     file2 = File.open('public/chapters.json')
