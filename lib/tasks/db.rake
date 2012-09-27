@@ -15,7 +15,10 @@ namespace :db  do
     mangas.each_with_index do |manga, index|
       print "#{index}\r"
       p manga
-      Manga.create(manga) if manga
+      unless manga.blank?
+        m = Manga.new(manga)
+        m.save
+      end
     end
     p 'importing chapters...'
     file2 = File.open('public/chapters.json')
