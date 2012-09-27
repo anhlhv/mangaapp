@@ -17,6 +17,7 @@ namespace :db  do
       p manga
       unless manga.blank?
         m = Manga.new(manga)
+        p m
         m.save
       end
     end
