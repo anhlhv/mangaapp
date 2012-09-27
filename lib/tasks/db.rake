@@ -14,9 +14,11 @@ namespace :db  do
     p mangas.count
     mangas.each_with_index do |manga, index|
       print "#{index}\r"
+      p "========= manga ========="
       p manga
       unless manga.blank?
         m = Manga.new(manga)
+        p "======= m ========"
         p m
         m.save
       end
