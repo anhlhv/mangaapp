@@ -7,7 +7,7 @@ namespace :db  do
     p 'deleting all mangas and chapters...'
     # Manga.delete_all
     # Chapter.delete_all
-    file1 = File.open('db/mangas.json')
+    file1 = File.open('public/mangas.json')
     mangas = ActiveSupport::JSON.decode(file1)
     mangas_size = mangas.count
     p 'importing mangas...'
@@ -16,7 +16,7 @@ namespace :db  do
       Manga.create(manga)
     end
     p 'importing chapters...'
-    file2 = File.open('db/chapters.json')
+    file2 = File.open('public/chapters.json')
     chapters = ActiveSupport::JSON.decode(file2)
     chapters_size = chapters.count
     chapters.each_with_index do |chapter, index|
