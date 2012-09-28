@@ -11,8 +11,8 @@ gem 'bootstrap-sass'
 gem 'pry'
 gem 'heroku'
 gem 'kaminari'
-gem 'mongoid_fulltext'
-gem 'mongoid_search'
+# gem 'mongoid_fulltext'
+# gem 'mongoid_search'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
