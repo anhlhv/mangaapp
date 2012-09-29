@@ -21,7 +21,7 @@
                 <td width="300px">Name</td>
                 <td width="5px">Author</td>
                 <td width="5px">Chapter</td>
-                <td width="30px">Update</td>
+                <td width="30px">Updated</td>
               </tr>
               <% @Lists.each do |c| %>
               <% @i=@i+1 %>
@@ -46,7 +46,7 @@
                       <%= c.chapters.count %>
                   </td>
                   <td>
-                      <%= c.create_date %>
+                      <%= c.updated_at.strftime("%d-%m-%Y") %>
                   </td>
                 </tr>         
               <% end %>

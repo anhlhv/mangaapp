@@ -1,5 +1,6 @@
 class Chapter
   include Mongoid::Document
+  include Mongoid::Timestamps::Updated
   field :content, type: String
   field :name
   field :cover_photo_url
@@ -9,6 +10,5 @@ class Chapter
   field :index
   field :picasa_id
   field :image_urls, type: Array, default: []
-  field :create_date, default: Time.new(2012,9,1,15,25,0, "+09:00")
   belongs_to :manga
 end

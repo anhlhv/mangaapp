@@ -1,7 +1,7 @@
 class Manga
   include Mongoid::Document
   include Mongoid::FullTextSearch
-  # include Mongoid::TimeStamps
+  include Mongoid::Timestamps::Updated
 
   paginates_per 20
 

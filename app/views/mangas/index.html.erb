@@ -1,4 +1,4 @@
-<% provide(:title, 'All comics') %>
+<% provide(:title, 'MangaVIP - Read Manga Online for Free!') %>
   	<div class="row-fluid">
 	    <div class="span9">
         	<div class="row-fluid">
@@ -25,17 +25,17 @@
 				<div class="block-manga">
 					<div class="block-manga-title"> Latest Chapter Updates </div>	
 					<div class="">
-						<table class="table table-bordered">
+						<table class="table table-bordered table-hover">
 							<% @i = 0 %>
-							<tr class="success">
-								<td width="5px"></td>
-							 	<td width="300px">Name</td>
-							 	<td width="5px">Views</td>
-							 	<td width="30px">Update</td>
+							<tr>
+								<td width="5px" class="text-center">#</td>
+							 	<td width="250px" class="text-center">Name</td>
+							 	<td width="5px" class="text-center">Views</td>
+							 	<td width="80px" class="text-center">Update</td>
 							</tr>
 							<% @chapter.each do |c| %>
-							 <tr class="success">
-							 	<td><%= @i+=1 %></td>
+							 <tr>
+							 	<td class="text-center"><%= @i+=1 %></td>
 							    <td>
 							    	<%= link_to chapter_path(c) do %><%= manga_name(c.manga_id) %> chap <%= c.index %><% end %>
 							    	<% if (admin_signed == true) %>
@@ -45,12 +45,12 @@
 							    	</p>
 							    	<% end %>
 							    </td>
-							    <td>
+							    <td class="text-center">
 						           <%= Integer(c.views) %>
 						        </td>
 						   
-							    <td>
-						           <%= c.create_date.strftime("%d-%m-%Y") %>
+							    <td class="text-center">
+						           <%= c.updated_at.strftime("%H:%M - %d-%m-%Y") %>
 						        </td>
 								</tr>					
 							<% end %>
