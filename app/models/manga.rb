@@ -14,10 +14,8 @@ class Manga
   field :cover_photo_url
   field :photo_album_name
   field :author
- 
 
   has_many :chapters
-  has_many :comments
 
   # fulltext_search_in :name, :author
 end
