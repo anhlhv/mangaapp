@@ -5,26 +5,18 @@ namespace :db  do
   desc "Task description"
   task :seed_data => :environment do
     p 'deleting all mangas and chapters...'
-    # Manga.delete_all
-    # Chapter.delete_all
-    file1 = File.open('public/mangas.json')
+    Manga.delete_all
+    Manga.delete_all
+    file1 = File.open('db/mangas.json')
     mangas = ActiveSupport::JSON.decode(file1)
     mangas_size = mangas.count
     p 'importing mangas...'
-    p mangas.count
     mangas.each_with_index do |manga, index|
       print "#{index}\r"
-      p "========= manga ========="
-      p manga
-      unless manga.blank?
-        m = Manga.new(manga)
-        p "======= m ========"
-        p m
-        m.save
-      end
+      Manga.create(manga)
     end
     p 'importing chapters...'
-    file2 = File.open('public/chapters.json')
+    file2 = File.open('db/chapters.json')
     chapters = ActiveSupport::JSON.decode(file2)
     chapters_size = chapters.count
     chapters.each_with_index do |chapter, index|
