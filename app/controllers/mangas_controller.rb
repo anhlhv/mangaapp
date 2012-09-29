@@ -14,7 +14,6 @@ class MangasController < ApplicationController
 		@chapters= @manga.chapters.desc(:index).page(params[:page]).per(20);
 		@total_views = Chapter.where(manga_id: @manga._id).sum(:views)
 		Manga.where(_id: @manga._id).update(views: @total_views)
-		@Comment = Comment.last
 	end
 	def create
 		@manga = Manga.new(params[:manga])

@@ -1,6 +1,6 @@
 class Manga
   include Mongoid::Document
-  # include Mongoid::FullTextSearch
+  include Mongoid::FullTextSearch
   # include Mongoid::TimeStamps
 
   paginates_per 20
@@ -17,5 +17,5 @@ class Manga
 
   has_many :chapters
 
-  # fulltext_search_in :name, :author
+  fulltext_search_in :name, :author
 end
