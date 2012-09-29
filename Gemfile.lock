@@ -51,8 +51,7 @@ GEM
     excon (0.16.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fast-stemmer (1.0.1)
-    heroku (2.32.4)
+    heroku (2.32.6)
       heroku-api (~> 0.3.5)
       launchy (>= 0.3.2)
       netrc (~> 0.7.7)
@@ -87,9 +86,6 @@ GEM
     mongoid_fulltext (0.6.0)
       mongoid (~> 3.0.1)
       unicode_utils (~> 1.0.0)
-    mongoid_search (0.3.0)
-      fast-stemmer (~> 1.0.0)
-      mongoid (>= 3.0.0)
     moped (1.2.5)
     multi_json (1.3.6)
     netrc (0.7.7)
@@ -178,7 +174,6 @@ DEPENDENCIES
   kaminari
   mongoid
   mongoid_fulltext
-  mongoid_search
   pry
   rails (= 3.2.8)
   rspec-rails (~> 2.0)
