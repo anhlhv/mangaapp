@@ -9,7 +9,6 @@ class ChaptersController < ApplicationController
   def create
     @manga1 = Manga.find(params[:manga_id])
     @manga = @manga1.chapters.create(params[:chapter])
-    @manga.create_date = Time.now
     @manga.save
     redirect_to @manga1
   end

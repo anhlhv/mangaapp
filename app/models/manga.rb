@@ -2,7 +2,6 @@ class Manga
   include Mongoid::Document
   include Mongoid::FullTextSearch
   include Mongoid::Timestamps::Updated
-
   paginates_per 20
 
   field :name
@@ -14,7 +13,7 @@ class Manga
   field :cover_photo_url
   field :photo_album_name
   field :author
-
+  
   has_many :chapters
 
   fulltext_search_in :name, :author

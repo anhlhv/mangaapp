@@ -34,7 +34,6 @@ VIP13::Application.routes.draw do
   # resources :mangas do
     # resources :comments 
   # end
-  resources :comments 
   resources :chapters 
   resources :slides
   # Sample resource route with options:

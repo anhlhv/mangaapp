@@ -40,8 +40,8 @@ class MangasController < ApplicationController
 		end
 	end
 	def search
-		@lasts = Manga.desc(:create_date).limit(20)
-		@result = Manga.fulltext_search(params[:keyword])
+		@last_mangas = Manga.desc(:updated_at).limit(20)
+		@results = Manga.fulltext_search(params[:keyword])
 	end
 	def list
 	  	if params[:sort].nil?

@@ -12,11 +12,10 @@
             <td width="5px">Chapter</td>
             <td width="30px">Update</td>
           </tr>
-          <% @result.each do |c| %>
-          <% @i=@i+1 %>
+          <% @results.each do |c| %>
            <tr class="success">
               <td>
-                <%= @i %>
+                <%= @i=@i+1 %>
               </td>
               <td class="col1">
                 <%= link_to c.name, manga_path(c) %>
@@ -35,7 +34,7 @@
                   <%= c.chapters.count %>
               </td>
               <td>
-                  <%= c.create_date %>
+                  <%= c.updated_at %>
               </td>
             </tr>         
           <% end %>
@@ -61,7 +60,7 @@
             <td width="5px">Chapter</td>
             <td width="30px">Update</td>
           </tr>
-          <% @lasts.each do |c| %>
+          <% @last_mangas.each do |c| %>
           <% @i=@i+1 %>
            <tr class="success">
               <td>
@@ -84,7 +83,7 @@
                   <%= c.chapters.count %>
               </td>
               <td>
-                  <%= c.create_date %>
+                  <%= c.updated_at %>
               </td>
             </tr>         
           <% end %>
