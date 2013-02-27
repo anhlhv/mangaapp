@@ -8,11 +8,11 @@
 
 body {
   margin: 0;
-  font-family: $baseFontFamily;
-  font-size: $baseFontSize;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
   line-height: $baseLineHeight;
   color: $textColor;
-  background-color: $bodyBackground;
+  background-color: rgb(240,240,240);
 }
 
 
