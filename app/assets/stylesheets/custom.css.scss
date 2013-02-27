@@ -5,9 +5,8 @@ html {
 }
 
 body {
-  padding-top: 60px;
   font:12px/150% Verdana, Arial, Helvetica, sans-serif;
-  background: url('http://nj4.upanh.com/b1.s24.d3/61eff8d5a8e994acc18561db3faea0a5_41825854.backgroundgdvn.gif');
+  background: url('http://canifa.com/skin/frontend/default/canifa_v2/images/header-bg.jpg') repeat-x top center #F3F3F3;
 }
 select {
   margin-top:8px;
@@ -42,7 +41,7 @@ select {
 }
 
 .container-fluid {
-  margin-top:20px; 
+  margin-top:20px;
   background: #FFFFFF;
   padding: 10px 5px 0px 5px !important;
   border: 1px solid #dfdfdf;
@@ -60,7 +59,7 @@ select {
 }
 .span12 {
   width: 945px !important;
-  margin-left:0px !important; 
+  margin-left:0px !important;
   padding: 10px
 }
 .sidebar {
@@ -455,9 +454,9 @@ footer {
 
 footer a {
   color: #555;
-}  
+}
 
-footer a:hover { 
+footer a:hover {
   color: #222;
 }
 

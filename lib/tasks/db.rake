@@ -2,20 +2,29 @@
 require 'open-uri'
 require 'json'
 namespace :db  do
-  desc "Task description"
+  desc "Import data and fix"
+  task remake: :environment do
+    if Rails.env.development? || Rails.env.staging?
+      Rake::Task['db:mongoid:drop'].invoke
+      Rake::Task['db:seed_data'].invoke
+      Rake::Task['db:fix_db'].invoke
+    else
+      puts 'Can rake db:remake in development & staging environments only'
+    end
+  end
   task :seed_data => :environment do
-    p 'deleting all mangas and chapters...'
+    p 'Deleting all mangas and chapters...'
     Manga.delete_all
     Manga.delete_all
     file1 = File.open('db/mangas.json')
     mangas = ActiveSupport::JSON.decode(file1)
     mangas_size = mangas.count
-    p 'importing mangas...'
+    p 'Importing mangas...'
     mangas.each_with_index do |manga, index|
       print "#{index}\r"
       Manga.create(manga)
     end
-    p 'importing chapters...'
+    p 'Importing chapters...'
     file2 = File.open('db/chapters.json')
     chapters = ActiveSupport::JSON.decode(file2)
     chapters_size = chapters.count
@@ -23,12 +32,12 @@ namespace :db  do
       print "#{index}\r"
       Chapter.create(chapter)
     end
-    p 'Mangas imported.'
+    p 'Mangas and chapters imported.'
   end
 
   desc "Task description"
   task :fix_db => :environment do
-
+    p 'fixing db ...'
     Chapter.each do |c|
       c.manga_id = ""
       c.save
@@ -37,5 +46,6 @@ namespace :db  do
         m.chapters << c if m
       end
     end
+    p 'Done all!'
   end
 end

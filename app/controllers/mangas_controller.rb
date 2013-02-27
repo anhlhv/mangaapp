@@ -8,10 +8,10 @@ class MangasController < ApplicationController
 	  end
 	def new
 		@manga = Manga.new
-	end 
+	end
 	def show
 		@manga = Manga.find(params[:id])
-		@chapters= @manga.chapters.desc(:index).page(params[:page]).per(20);
+		@chapters= @manga.chapters.desc(:index).page(params[:page]).per(16);
 		@total_views = Chapter.where(manga_id: @manga._id).sum(:views)
 		Manga.where(_id: @manga._id).update(views: @total_views)
 	end
