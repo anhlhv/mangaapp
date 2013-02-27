@@ -1,31 +1,11 @@
 <% provide(:title, 'MangaVIP - Read Manga Online for Free!') %>
   	<div class="row-fluid">
 	    <div class="span9">
-        	<div class="row-fluid">
-	        	<div class="block-manga">
-					<div class="block-manga-title"> Latest Manga Updates </div>	
-			            <ul class="thumbnails">
-			            	<% @last_mangas.each do |c| %>
-				              <li class="manga-lastest">
-				                <div class="manga-cover">
-				               		<a class="thumbnail chaper_img" href ="<%= manga_path(c) %>" >
-				                  		<%= image_tag c.cover_photo_url %>
-				                  	</a>
-					                <div class="caption">
-					                   <span class="title"><%= link_to c.name, manga_path(c) %></span>
-					                </div>
-				                  
-				                </div>
-				              </li>
-			              <% end %>
-			            </ul>
-			    	</div>
-          	</div>
 			<div class="row-fluid">
 				<div class="block-manga">
-					<div class="block-manga-title"> Latest Chapter Updates </div>	
+					<div class="block-manga-title"> Latest Chapter Updates </div>
 					<div class="">
-						<table class="table table-bordered table-hover">
+						<table class="table table-hover">
 							<% @i = 0 %>
 							<tr>
 								<td width="5px" class="text-center">#</td>
@@ -33,76 +13,36 @@
 							 	<td width="5px" class="text-center">Views</td>
 							 	<td width="80px" class="text-center">Update</td>
 							</tr>
-							<% @chapter.each do |c| %>
-							 <tr>
-							 	<td class="text-center"><%= @i+=1 %></td>
-							    <td>
-							    	<%= link_to chapter_path(c) do %><%= manga_name(c.manga_id) %> chap <%= c.index %><% end %>
-							    	<% if (admin_signed == true) %>
-							    	<p class="admin-action">
-							    		<%= link_to "Edit", edit_chapter_path(c) %>
-							    	- <%= link_to "Delete", chapter_path(c), :method => :delete, :remote => true, :confirm => "Are you sure?" %>
-							    	</p>
-							    	<% end %>
-							    </td>
-							    <td class="text-center">
-						           <%= Integer(c.views) %>
-						        </td>
-						   
-							    <td class="text-center">
-						           <%= c.updated_at.strftime("%H:%M - %d-%m-%Y") %>
-						        </td>
-								</tr>					
+							<% @chapters.each do |c| %>
+								<% if c.manga!=nil %>
+								 <tr>
+								 	<td class="text-center"><%= @i+=1 %></td>
+								    <td>
+								    	<%= link_to manga_name(c.manga_id).to_s+c.index.to_s, manga_path(c.manga) %>
+								    	<% if (admin_signed == true) %>
+								    	<p class="admin-action">
+								    		<%= link_to "Edit", edit_chapter_path(c) %>
+								    	- <%= link_to "Delete", chapter_path(c), :method => :delete, :remote => true, :confirm => "Are you sure?" %>
+								    	</p>
+								    	<% end %>
+								    </td>
+								    <td class="text-center">
+							           <%= Integer(c.views) %>
+							        </td>
+
+								    <td class="text-center">
+							           <%= c.updated_at.strftime("%H:%M - %d-%m-%Y") %>
+							        </td>
+									</tr>
+								<% end %>
 							<% end %>
 						</table>
 					</div>
 				</div>
+				<div class="paginate_box">
+        	<%= paginate @chapters, :window => 2 %>
+        </div>
 			</div>
 		</div>
-		<div class="span3 sidebar">    
-			<div class="block-manga">
-				<div class="row-fluid">   
-					<div class="block-manga-title"> Manga of the week </div>
-					<div class="block-manga-content">
-	                	<div class="sidebar-icon">
-	                		<img src="<%= @manga_week.cover_photo_url %>">
-	                  	</div>
-	                  	<div class="sidebar-manga">
-	                    	<div class="sidebar-manga-week"><%= link_to @manga_week.name, manga_path( @manga_week) %></div>
-	                    </div>
-	                    <div>
-		            	<b>Released:</b> 1982<br>
-		            	<b>Author(s):</b> Ikeno Koi<br>
-		            	<b>Artist(s):</b> Ikeno Koi<br>
-		            	<b>Genre(s):</b> Comedy, Fantasy, Romance, Shoujo<br>
-		            	<b>Rating:</b> Average 4.81 / 5 out of 63 total votes<br>
-		            	<b>Summary:</b> <br>
-							<%= truncate(@manga_week.description, :length => 170) %>
-						</div>
-		        	</div>
-		        </div>
-				<div class="row-fluid" id="Popular">   
-					<div class="block-manga-title"> Popular manga </div>
-					<div class="block-manga-content">
-		            	<ul class="thumbnails">
-		            	<% @most_mangas.each do |c| %>
-			              <li>
-			              	<div class="block-li">
-			                	<div class="sidebar-icon">
-			                		<%= link_to manga_path(c) do %>
-			                  		<%= image_tag c.cover_photo_url %>
-			                  		<% end %>
-			                  	</div>
-			                  	<div class="sidebar-manga">
-			                    	<%= link_to c.name, manga_path(c) %><br>
-			                    	<p>Chapter <%= Integer(c.chapters.max(:index)) %></p>
-			                    </div>
-			                </div>
-			              </li>
-		              	<% end %>
-		            	</ul>
-		        	</div>
-		        </div>
-	         </div>
-			</div>
+		<%=  render 'sidebar' %>
 		</div>

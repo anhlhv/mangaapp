@@ -2,9 +2,8 @@ class MangasController < ApplicationController
 	  def index
 	   	@most_mangas =  Manga.desc(:views).limit(15)
 	   	@last_mangas = Manga.desc(:create_date).limit(10)
-	   	# @slide = Slide.asc(:title)
-	   	@chapter = Chapter.asc(:id).limit(30)
-	   	@manga_week = Manga.first
+	   	@chapters = Chapter.asc(:create_date).page(params[:page]).per(30);
+	   	# @manga_week = Manga.first
 	  end
 	def new
 		@manga = Manga.new

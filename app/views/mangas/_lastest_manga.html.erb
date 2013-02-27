@@ -1,0 +1,20 @@
+<div class="row-fluid">
+  <div class="block-manga">
+    <div class="block-manga-title"> Latest Manga Updates </div>
+    <ul class="thumbnails">
+      <% @last_mangas.each do |c| %>
+        <li class="manga-lastest">
+          <div class="manga-cover">
+            <a class="thumbnail chaper_img" href ="<%= manga_path(c) %>" >
+                <%= image_tag c.cover_photo_url %>
+              </a>
+            <div class="caption">
+               <span class="title"><%= link_to c.name, manga_path(c) %></span>
+            </div>
+
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

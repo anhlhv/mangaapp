@@ -1,0 +1,26 @@
+<div class="span3 sidebar">
+  <div class="block-sidebar">
+    <div class="row-fluid" id="Popular">
+      <div class="block-manga-title"> Popular manga </div>
+      <div class="block-manga-content">
+              <ul class="thumbnails">
+              <% @most_mangas.each do |c| %>
+                <li>
+                  <div class="block-li">
+                    <div class="sidebar-icon">
+                      <%= link_to manga_path(c) do %>
+                        <%= image_tag c.cover_photo_url %>
+                        <% end %>
+                      </div>
+                      <div class="sidebar-manga">
+                        <%= link_to c.name, manga_path(c) %><br>
+                        <p>Chapter <%= Integer(c.chapters.max(:index)) %></p>
+                      </div>
+                  </div>
+                </li>
+                <% end %>
+              </ul>
+          </div>
+        </div>
+       </div>
+  </div>

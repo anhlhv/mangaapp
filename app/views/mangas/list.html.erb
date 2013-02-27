@@ -1,22 +1,22 @@
 <% provide(:title, 'List manga') %>
 <div class="row-fluid">
-  <div class = "top-lists">
-    <%= link_to "All", list_mangas_path(), :class=>"btn"%>
-    <% for begin_letter in "a".."z" %>
-    <%= link_to begin_letter, list_mangas_path(:like => begin_letter),:class => "begin_letter" %>
-    <% end %>
-  </div>
-  <div class = "top-lists">
-    <%= link_to "Name", list_mangas_path(:sort => "name"),:class => "begin_letter" %>
-    <%= link_to "Views", list_mangas_path(:sort => "views"),:class => "begin_letter" %>
-    <%= link_to "Update", list_mangas_path(:sort => "create_date"),:class => "begin_letter" %>
-  </div>
   <div class="block-manga">
-      <div class="block-manga-title"> Latest Manga Updates </div> 
+      <div class="block-manga-title"> Latest Manga Updates </div>
+      <div class = "top-lists">
+        <%= link_to "All", list_mangas_path(), :class=>"btn"%>
+        <% for begin_letter in "a".."z" %>
+        <%= link_to begin_letter, list_mangas_path(:like => begin_letter),:class => "begin_letter" %>
+        <% end %>
+      </div>
+      <div class = "top-lists">
+        <%= link_to "Name", list_mangas_path(:sort => "name"),:class => "begin_letter" %>
+        <%= link_to "Views", list_mangas_path(:sort => "views"),:class => "begin_letter" %>
+        <%= link_to "Update", list_mangas_path(:sort => "create_date"),:class => "begin_letter" %>
+      </div>
         <div class="">
-          <table class="table table-striped table-bordered">
+          <table class="table">
               <% @i = 0 %>
-              <tr class="success">
+              <tr>
                 <td width="5px"></td>
                 <td width="300px">Name</td>
                 <td width="5px">Author</td>
@@ -25,7 +25,7 @@
               </tr>
               <% @Lists.each do |c| %>
               <% @i=@i+1 %>
-               <tr class="success">
+               <tr >
                   <td>
                     <%= @i %>
                   </td>
@@ -41,14 +41,14 @@
                   <td>
                        <%= c.author %>
                     </td>
-               
+
                   <td>
                       <%= c.chapters.count %>
                   </td>
                   <td>
                       <%= c.updated_at.strftime("%d-%m-%Y") %>
                   </td>
-                </tr>         
+                </tr>
               <% end %>
             </table>
           </div>

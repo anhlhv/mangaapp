@@ -3,8 +3,9 @@ html {
   overflow-y: scroll;
 }
 body {
-  font:12px/150% Verdana, Arial, Helvetica, sans-serif;
+  font:13px Verdana, Arial, Helvetica, sans-serif;
   background: rgb(240,240,240);
+  color: #333;
 }
 a {
   color: #26638c;
@@ -45,27 +46,20 @@ header {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
   letter-spacing: -1px;
   padding-top: 9px;
   line-height: 1;
 }
 
 #logo:hover {
-  color: #fff;
-  text-decoration: none;
 }
 
 .container-fluid {
   margin-top:20px;
   background: #FFFFFF;
-  padding: 10px 5px 0px 5px !important;
-  border: 1px solid #dfdfdf;
-  -moz-box-shadow: 0 0px 5px #dfdfdf;
-  -webkit-box-shadow: 0 0px 5px #dfdfdf;
-  -ms-box-shadow: 0 0px 5px #dfdfdf;
-  -o-box-shadow: 0 0px 5px #dfdfdf;
-  box-shadow: 0 0px 5px #dfdfdf;
+  padding: 10px 5px 0px 10px !important;
+  border: 1px solid rgb(214,214,214);
+  @include box-shadow(rgba(0,0,0,.1) 0 0 12px);
 }
 .alert {
   margin-bottom: 10px !important;
@@ -151,7 +145,7 @@ header {
   ul {
     li {
       a {
-        font:1.2em !important;
+        font-weight:medium !important;
         color: #606e67 !important;
         text-shadow:none !important;
         text-decoration: none;
@@ -184,13 +178,16 @@ header {
 .sidebar-manga-week {
   color:#8B2F20;
   a {
-    font-size: 18px;
+    font-size: 15px;
+    vertical-align: middle;
   }
 }
 .block-manga {
     margin-bottom: 10px;
+}
+.block-sidebar {
+    margin-bottom: 10px;
     border: 1px solid #dfdfdf;
-    color: #000000;
     -moz-box-shadow: 0 0px 5px #dfdfdf;
     -webkit-box-shadow: 0 0px 5px #dfdfdf;
     -ms-box-shadow: 0 0px 5px #dfdfdf;
@@ -201,7 +198,6 @@ header {
   padding:6px;
   border-bottom: 1px solid #DCDEE1;
   background:#eeeeee;
-  color:#000000;
   font-weight: normal;
   font-size: 14px;
 }
