@@ -2,6 +2,18 @@
 html {
   overflow-y: scroll;
 }
+body {
+  margin: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  background-color: rgb(240,240,240) !important;
+}
+a {
+  color: #26638c !important;
+}
+a:hover {
+  color: #c98344 !important;
+}
 select {
   margin-top:8px;
   width:50px !important;
