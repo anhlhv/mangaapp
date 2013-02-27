@@ -1,12 +1,16 @@
-
-
+@import "compass";
 html {
   overflow-y: scroll;
 }
-
 body {
   font:12px/150% Verdana, Arial, Helvetica, sans-serif;
-  background: url('http://canifa.com/skin/frontend/default/canifa_v2/images/header-bg.jpg') repeat-x top center #F3F3F3;
+  background: rgb(240,240,240);
+}
+a {
+  color: #26638c;
+}
+a:hover {
+  color: #c98344 !important;
 }
 select {
   margin-top:8px;
@@ -25,6 +29,18 @@ select {
 
 /* header */
 
+header {
+  height: 30px;
+  .main-nav {
+    height: 30px;
+    background: none;
+  }
+  .main-nav-inner {
+    background: #FFFFFF;
+    border-bottom: 1px solid rgb(214,214,214);
+    @include box-shadow(rgba(0,0,0,.1) 0 0 12px);
+  }
+}
 #logo {
   float: left;
   margin-right: 10px;
@@ -131,6 +147,25 @@ select {
 }
 .head-menu {
   float: right;
+  margin-top: 5px;
+  ul {
+    li {
+      a {
+        font:1.2em !important;
+        color: #606e67 !important;
+        text-shadow:none !important;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #c98344 !important;
+      }
+    }
+    .active {
+      a {
+        color: #FFFFFF !important;
+      }
+    }
+  }
 }
 .sidebar-manga {
     float: left;

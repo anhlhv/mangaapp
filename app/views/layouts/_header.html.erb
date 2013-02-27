@@ -1,5 +1,5 @@
-<header class="navbar">
-  <div class="navbar-inner">
+<header class="navbar main-nav">
+  <div class="main-nav-inner" >
     <div class="container">
       <div class="head-container">
       <div class="head-logo">
@@ -15,8 +15,8 @@
       </div>
       <div class="head-menu">
         <nav>
-          <ul class="nav pull-right">
-            <li><%= link_to "Home",  root_path %></li>
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><%= link_to "Home",  root_path %></li>
             <li><%= link_to "List",   list_mangas_path %></li>
             <% if user_signed_in? %>
             <li class="dropdown">
@@ -24,7 +24,7 @@
                  data-toggle="dropdown" href="#">
                   User
                   <b class="caret"></b>
-                </a>
+              </a>
               <ul class="dropdown-menu">
                 <li><%= link_to('Profile', user_password_path) %></li>
                 <li><%= link_to('Admin', panel_mangas_path) %></li>
