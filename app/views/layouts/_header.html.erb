@@ -13,8 +13,8 @@
       <div class="head-menu">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li class="active"><%= link_to "Home",  root_path %></li>
-            <li><%= link_to "List",   list_mangas_path %></li>
+            <li class="<%= "active" if (params[:controller]=="mangas" && params[:action] == "index") %>"><%= link_to "Home",  root_path %></li>
+            <li class="<%= "active" if (params[:controller]=="mangas" && params[:action] == "list") %>"><%= link_to "List",   list_mangas_path %></li>
             <% if user_signed_in? %>
             <li class="dropdown">
               <a class="dropdown-toggle"
@@ -30,7 +30,7 @@
               </ul>
             </li>
             <% else %>
-              <li><%= link_to "Sign up", new_user_registration_path %> </li>
+              <li class="<%= "active" if (params[:controller]=="devise/registrations" && params[:action] == "new") %>"><%= link_to "Sign up", new_user_registration_path %> </li>
               <li><a data-toggle="modal" href="#SigninDialog">Sign in</a></li>
             <% end %>
           </ul>
